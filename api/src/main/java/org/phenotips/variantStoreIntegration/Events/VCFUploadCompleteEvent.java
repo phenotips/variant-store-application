@@ -30,6 +30,8 @@ public class VCFUploadCompleteEvent implements VCFEvent
 {
     private Patient patient;
 
+    private static final String TYPE = "VCFUploadCompleteEvent";
+
     /**
      * @param patient A valid PhenoTips patient
      */
@@ -54,5 +56,11 @@ public class VCFUploadCompleteEvent implements VCFEvent
     public Patient getPatient()
     {
         return this.patient;
+    }
+
+    @Override
+    public String getType()
+    {
+        return TYPE;
     }
 }

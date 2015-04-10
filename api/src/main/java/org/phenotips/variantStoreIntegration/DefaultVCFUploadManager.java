@@ -24,6 +24,7 @@ import org.phenotips.data.permissions.PermissionsManager;
 import org.phenotips.data.permissions.Visibility;
 import org.phenotips.variantStoreIntegration.Events.VCFRemovalCompleteEvent;
 import org.phenotips.variantStoreIntegration.Events.VCFUploadCompleteEvent;
+import org.phenotips.variantStoreIntegration.mocks.MockVariantStore;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.InitializationException;

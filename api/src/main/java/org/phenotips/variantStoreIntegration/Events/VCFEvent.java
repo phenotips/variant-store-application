@@ -34,4 +34,9 @@ public interface VCFEvent extends Event
      * @return The patient to whom the VCF relates to
      */
     Patient getPatient();
+
+    /**
+     * @return The type of VCFEvent
+     */
+    String getType();
 }

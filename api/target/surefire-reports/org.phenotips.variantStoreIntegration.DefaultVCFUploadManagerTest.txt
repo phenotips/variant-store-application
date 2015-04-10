@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.692 sec <<< FAILURE! - in org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest
-testNormalVCFUpload(org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest)  Time elapsed: 0.692 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.059 sec <<< FAILURE! - in org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest
+testNormalVCFUpload(org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest)  Time elapsed: 1.059 sec  <<< ERROR!
 java.lang.NoClassDefFoundError: javax/servlet/http/HttpServletRequest
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
@@ -41,5 +41,5 @@ java.lang.NoClassDefFoundError: javax/servlet/http/HttpServletRequest
 	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:51)
 	at org.mockito.Mockito.mock(Mockito.java:1243)
 	at org.mockito.Mockito.mock(Mockito.java:1120)
-	at org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest.testNormalVCFUpload(DefaultVCFUploadManagerTest.java:83)
+	at org.phenotips.variantStoreIntegration.DefaultVCFUploadManagerTest.testNormalVCFUpload(DefaultVCFUploadManagerTest.java:84)
 
