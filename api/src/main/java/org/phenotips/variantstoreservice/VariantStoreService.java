@@ -17,21 +17,29 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.phenotips.variantStoreIntegration.Events;
+package org.phenotips.variantstoreservice;
 
-import org.phenotips.data.Patient;
+import org.xwiki.component.annotation.Role;
+import org.xwiki.stability.Unstable;
 
-import org.xwiki.observation.event.Event;
+import java.util.List;
+
+import org.ga4gh.GAVariant;
 
 /**
- * The event fired upon completion of a VCF processing job in the variant store.
+ * Service that exposes Phenotips' Variant Store.
  *
- * @version $Id$
+ * @version $Id: 47fbeef7d4aac08639f2dc9016b2e6c6d3923293 $
+ * @since 1.1M1
  */
-public interface VCFEvent extends Event
+@Unstable
+@Role
+public interface VariantStoreService
 {
     /**
-     * @return The patient to whom the VCF relates to
+     * @param id Patient Id
+     * @param n  Number of Variants to return
+     * @return a list of GAVariants that are the most harmful
      */
-    Patient getPatient();
+    List<GAVariant> getTopHarmfulVariants(String id, int n);
 }

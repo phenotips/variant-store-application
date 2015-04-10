@@ -1,2 +1,2 @@
-org.phenotips.variantStoreIntegration.DefaultVCFUploadManager
-package org.phenotips.variantStoreIntegration.script.VCFStorageScriptService
+org.phenotips.variantstoreservice.internal.DefaultVariantStoreService
+org.phenotips.variantstoreservice.internal.VariantStoreInitializer

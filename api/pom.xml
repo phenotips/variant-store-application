@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -19,46 +18,50 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.phenotips</groupId>
-    <artifactId>variant-store-integration</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>variant-store-service</artifactId>
+    <version>1.2-SNAPSHOT</version>
   </parent>
+  <artifactId>variant-store-service-api</artifactId>
+  <name>PhenoTips - Variant Store Service API</name>
 
   <properties>
-    <coverage.instructionRatio>0</coverage.instructionRatio>
+    <coverage.instructionRatio>0.81</coverage.instructionRatio>
   </properties>
 
-  <artifactId>variant-store-integration-api</artifactId>
-  <name>PhenoTips - Variant Store Integration - APIs for integrating PhenoTips with the Variant Store.</name>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>patient-data-api</artifactId>
-      <version>${phenotips.version}</version>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-component-api</artifactId>
+      <version>${xwiki.version}</version>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>patient-access-rules-api</artifactId>
-      <version>${phenotips.version}</version>
-    </dependency>
+    <!-- Only needed if some of the component's APIs must be made visible to scripting in wiki pages -->
     <dependency>
       <groupId>org.xwiki.commons</groupId>
-      <artifactId>xwiki-commons-job</artifactId>
+      <artifactId>xwiki-commons-script</artifactId>
       <version>${xwiki.version}</version>
     </dependency>
     <dependency>
-      <groupId>net.sf.json-lib</groupId>
-      <artifactId>json-lib</artifactId>
-      <classifier>jdk15</classifier>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.xwiki.commons</groupId>
-    	<artifactId>xwiki-commons-repository-model</artifactId>
-    	<version>5.4.5</version>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-observation-api</artifactId>
+      <version>${xwiki.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-environment-api</artifactId>
+      <version>${xwiki.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.phenotips</groupId>
+      <artifactId>variant-store</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
