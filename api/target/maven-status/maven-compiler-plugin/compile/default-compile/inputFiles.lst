@@ -1,3 +1,3 @@
-/home/meatcar/dev/phenotips/phenotips-parent/components/variant-store-service/api/src/main/java/org/phenotips/variantstoreservice/internal/DefaultVariantStoreService.java
-/home/meatcar/dev/phenotips/phenotips-parent/components/variant-store-service/api/src/main/java/org/phenotips/variantstoreservice/internal/VariantStoreInitializer.java
-/home/meatcar/dev/phenotips/phenotips-parent/components/variant-store-service/api/src/main/java/org/phenotips/variantstoreservice/VariantStoreService.java
+/home/meatcar/dev/phenotips/variant-store-application/api/src/main/java/org/phenotips/variantstoreservice/VariantStoreService.java
+/home/meatcar/dev/phenotips/variant-store-application/api/src/main/java/org/phenotips/variantstoreservice/internal/VariantStoreInitializer.java
+/home/meatcar/dev/phenotips/variant-store-application/api/src/main/java/org/phenotips/variantstoreservice/internal/DefaultVariantStoreService.java

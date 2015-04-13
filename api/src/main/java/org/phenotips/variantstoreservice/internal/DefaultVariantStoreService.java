@@ -20,8 +20,6 @@
 package org.phenotips.variantstoreservice.internal;
 
 import org.phenotips.variantstore.VariantStore;
-import org.phenotips.variantstore.db.solr.SolrController;
-import org.phenotips.variantstore.input.vcf.VCFManager;
 import org.phenotips.variantstoreservice.VariantStoreService;
 
 import org.xwiki.component.annotation.Component;
@@ -50,9 +48,7 @@ public class DefaultVariantStoreService implements Initializable, VariantStoreSe
     @Override
     public void initialize() throws InitializationException {
         variantStore = new VariantStore(
-                Paths.get("ALLURBASERBELONGTOUS"),
-                new VCFManager(),
-                new SolrController()
+                Paths.get("ALLURBASERBELONGTOUS")
         );
     }
 
