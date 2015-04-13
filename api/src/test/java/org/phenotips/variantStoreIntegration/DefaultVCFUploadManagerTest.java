@@ -22,6 +22,7 @@ package org.phenotips.variantStoreIntegration;
 import org.phenotips.data.Patient;
 import org.phenotips.data.permissions.PermissionsManager;
 import org.phenotips.data.permissions.Visibility;
+import org.phenotips.variantStoreIntegration.jobs.FutureManager;
 import org.phenotips.variantStoreIntegration.mocks.MockVariantStore;
 
 import org.xwiki.component.manager.ComponentLookupException;

@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.phenotips.variantStoreIntegration;
+package org.phenotips.variantStoreIntegration.Events.EventStream;
 
 import org.phenotips.data.Patient;
 import org.phenotips.variantStoreIntegration.Events.VCFEvent;
@@ -60,8 +60,7 @@ public class VCFEventToStreamAdapter implements EventListener, Initializable
     @Override
     public void initialize() throws InitializationException
     {
-        // Register self in observation manager
-
+        this.om.addListener(this);
     }
 
     @Override
