@@ -28,9 +28,9 @@ import org.phenotips.data.Patient;
  */
 public class VCFRemovalCompleteEvent implements VCFEvent
 {
-    private Patient patient;
-
     private static final String TYPE = "VCFRemovalCompleteEvent";
+
+    private Patient patient;
 
     /**
      * @param patient A valid PhenoTips patient
