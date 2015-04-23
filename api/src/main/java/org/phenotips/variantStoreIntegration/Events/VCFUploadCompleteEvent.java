@@ -17,9 +17,11 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.phenotips.variantStoreIntegration.Events;
+package org.phenotips.variantStoreIntegration.events;
 
 import org.phenotips.data.Patient;
+
+import org.xwiki.users.User;
 
 /**
  * Event fired upon the successful completion of a patient's VCF file to the variant store.
@@ -59,8 +61,16 @@ public class VCFUploadCompleteEvent implements VCFEvent
     }
 
     @Override
-    public String getType()
+    public String getEventType()
     {
-        return TYPE;
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public User getAuthor()
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

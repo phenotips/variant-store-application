@@ -22,12 +22,9 @@ package org.phenotips.variantStoreIntegration;
 import org.phenotips.data.Patient;
 import org.phenotips.data.permissions.PermissionsManager;
 import org.phenotips.data.permissions.Visibility;
-import org.phenotips.variantStoreIntegration.Events.VCFRemovalCompleteEvent;
-import org.phenotips.variantStoreIntegration.Events.VCFUploadCompleteEvent;
-import org.phenotips.variantStoreIntegration.jobs.FutureManager;
-import org.phenotips.variantStoreIntegration.jobs.VCFRemovalJob;
-import org.phenotips.variantStoreIntegration.jobs.VCFUploadJob;
-import org.phenotips.variantStoreIntegration.mocks.MockVariantStore;
+import org.phenotips.variantStoreIntegration.VCFUploadManager;
+import org.phenotips.variantStoreIntegration.events.VCFRemovalCompleteEvent;
+import org.phenotips.variantStoreIntegration.events.VCFUploadCompleteEvent;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.InitializationException;
