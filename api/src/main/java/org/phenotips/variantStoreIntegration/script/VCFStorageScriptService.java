@@ -20,7 +20,7 @@
 package org.phenotips.variantStoreIntegration.script;
 
 import org.phenotips.data.Patient;
-import org.phenotips.variantStoreIntegration.VCFUploadManager;
+import org.phenotips.variantStoreIntegration.upload.VCFUploadManager;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.script.service.ScriptService;
@@ -79,7 +79,6 @@ public class VCFStorageScriptService implements ScriptService
      */
     public int getVCFStatus(Patient patient)
     {
-        // I guess this will just query the database??? Doesn't seem like such a good way of doing things.
         return 0;
     }
 }

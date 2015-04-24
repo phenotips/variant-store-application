@@ -17,14 +17,17 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.phenotips.variantStoreIntegration;
+package org.phenotips.variantStoreIntegration.upload;
 
 import org.phenotips.data.Patient;
 import org.phenotips.data.permissions.PermissionsManager;
 import org.phenotips.data.permissions.Visibility;
-import org.phenotips.variantStoreIntegration.VCFUploadManager;
 import org.phenotips.variantStoreIntegration.events.VCFRemovalCompleteEvent;
 import org.phenotips.variantStoreIntegration.events.VCFUploadCompleteEvent;
+import org.phenotips.variantStoreIntegration.jobs.FutureManager;
+import org.phenotips.variantStoreIntegration.jobs.VCFRemovalJob;
+import org.phenotips.variantStoreIntegration.jobs.VCFUploadJob;
+import org.phenotips.variantStoreIntegration.mocks.MockVariantStore;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.InitializationException;
@@ -96,7 +99,7 @@ public class DefaultVCFUploadManager implements VCFUploadManager
     /**
      * {@inheritDoc}
      *
-     * @see org.phenotips.variantStoreIntegration.VCFUploadManager#uploadVCF(org.phenotips.data.Patient, java.io.File)
+     * @see VCFUploadManager#uploadVCF(org.phenotips.data.Patient, java.io.File)
      */
     @Override
     public void uploadVCF(Patient patient, Path filePath)
@@ -124,7 +127,7 @@ public class DefaultVCFUploadManager implements VCFUploadManager
     /**
      * {@inheritDoc}
      *
-     * @see org.phenotips.variantStoreIntegration.VCFUploadManager#cancelUpload(org.phenotips.data.Patient)
+     * @see VCFUploadManager#cancelUpload(org.phenotips.data.Patient)
      */
     @Override
     public void cancelUpload(Patient patient)
@@ -143,7 +146,7 @@ public class DefaultVCFUploadManager implements VCFUploadManager
     /**
      * {@inheritDoc}
      *
-     * @see org.phenotips.variantStoreIntegration.VCFUploadManager#removeVCF(org.phenotips.data.Patient)
+     * @see VCFUploadManager#removeVCF(org.phenotips.data.Patient)
      */
     @Override
     public void removeVCF(Patient patient)

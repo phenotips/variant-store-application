@@ -24,6 +24,8 @@ import org.phenotips.data.permissions.PermissionsManager;
 import org.phenotips.data.permissions.Visibility;
 import org.phenotips.variantStoreIntegration.jobs.FutureManager;
 import org.phenotips.variantStoreIntegration.mocks.MockVariantStore;
+import org.phenotips.variantStoreIntegration.upload.DefaultVCFUploadManager;
+import org.phenotips.variantStoreIntegration.upload.VCFUploadManager;
 
 import org.xwiki.component.manager.ComponentLookupException;
 import org.xwiki.component.util.ReflectionUtils;

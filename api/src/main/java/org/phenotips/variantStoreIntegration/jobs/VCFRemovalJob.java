@@ -19,44 +19,59 @@
  */
 package org.phenotips.variantStoreIntegration.jobs;
 
+import org.phenotips.data.Patient;
+import org.phenotips.variantStoreIntegration.events.VCFRemovalCompleteEvent;
+import org.phenotips.variantStoreIntegration.events.VCFUploadCompleteEvent;
+
+import org.xwiki.observation.ObservationManager;
+
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+
+import com.xpn.xwiki.XWikiContext;
+import com.xpn.xwiki.XWikiException;
 
 /**
  * The wrapper class for the future returned from a call to variant stores remove method.
  *
  * @version $Id$
  */
-public class VCFRemovalJob implements Runnable
+public class VCFRemovalJob extends AbstractVCFJob
 {
-    private Future future;
 
-    private String patientId;
-
-    /**
-     * @param patientId The unique id of the patient.
-     * @param variantStoreFuture The future returned by the variant store.
-     */
-    public VCFRemovalJob(String patientId, Future variantStoreFuture)
+    public VCFRemovalJob (Patient patient, Future variantStoreFuture, XWikiContext context,
+        ObservationManager observationManager)
     {
         this.future = variantStoreFuture;
-        this.patientId = patientId;
+        this.patient = patient;
+        this.context = context;
+        this.observationManager = observationManager;
     }
 
     @Override
     public void run()
     {
+        String propertyName = "status";
         try {
-            // set patient VCF upload status to 'Removing' on disk
+            // set patient VCF upload status to 'removing' on disk
+            this.setUploadStatus("removing", this.patient, this.context);
 
             this.future.get();
 
-            // upon successful VCF upload set patient VCF upload status to 'null' on disk
-        } catch (InterruptedException e) {
-            this.future.cancel(true);
+            // upon successful VCF upload set patient VCF upload status to "" on disk
+            this.setUploadStatus("", this.patient, this.context);
 
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
+            this.observationManager.notify(new VCFRemovalCompleteEvent(this.patient), this);
+
+        } catch (InterruptedException e) {
+            //The removal job was cancelled just log an error
+            //TODO: Log error message
+        } catch (ExecutionException e) {
             e.printStackTrace();
+            //TODO: Log error message
+        } catch (XWikiException e) {
+            e.printStackTrace();
+            //TODO: Log error message
         }
 
     }

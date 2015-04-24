@@ -1,4 +1,4 @@
-package org.phenotips.variantStoreIntegration;
+package org.phenotips.variantStoreIntegration.upload;
 
 /*
  * See the NOTICE file distributed with this work for additional

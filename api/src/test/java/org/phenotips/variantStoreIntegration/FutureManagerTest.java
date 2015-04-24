@@ -20,6 +20,7 @@
 package org.phenotips.variantStoreIntegration;
 
 import org.phenotips.variantStoreIntegration.jobs.FutureManager;
+import org.phenotips.variantStoreIntegration.upload.DefaultVCFUploadManager;
 
 import org.xwiki.observation.event.Event;
 
