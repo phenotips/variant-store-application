@@ -152,6 +152,7 @@ public class DefaultVCFUploadManager implements VCFUploadManager
     public void removeVCF(Patient patient)
     {
         String id = patient.getId();
+        XWikiContext context = (XWikiContext) this.execution.getContext().getProperty("xwikicontext");
         if (this.currentUploads.get(id) != null) {
             this.logger.warn("Tried to remove the VCF of {} while it was uploading", patient.toString());
             return;
@@ -161,7 +162,7 @@ public class DefaultVCFUploadManager implements VCFUploadManager
         }
 
         Future varStoreFuture = this.varStore.removeIndividual(id);
-        VCFRemovalJob newRemovalJob = new VCFRemovalJob(id, varStoreFuture);
+        VCFRemovalJob newRemovalJob = new VCFRemovalJob(patient, varStoreFuture, context, this.observationManager);
         this.currentRemovals.add(id, this.executor.submit(newRemovalJob));
     }
 
